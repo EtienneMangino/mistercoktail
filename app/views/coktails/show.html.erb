@@ -10,5 +10,22 @@
   <%= @coktail.description %>
 </p>
 
+<h2 class="titre2 text-center">Doses</h2>
+<% @coktail.doses.all.each do |dose| %>
+  <div class="text-center ">
+    <p>
+      <strong>Ingredient:</strong>
+      <%= dose.ingredient.name %>
+    </p>
+
+    <p>
+      <strong>Amount :</strong>
+        <%= dose.amount %>
+    </p>
+  </div>
+<% end %>
+
+<%= render 'doses/form', coktail: @coktail, dose: @dose %>
+
 <%= link_to 'Edit', edit_coktail_path(@coktail) %> |
 <%= link_to 'Back', coktails_path %>

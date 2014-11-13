@@ -1,0 +1,33 @@
+<%= form_for([coktail, dose]) do |f| %>
+  <% if @dose.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dose.errors.count, "error") %> prohibited this dose from being saved:</h2>
+
+      <ul>
+      <% @dose.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :amount %><br>
+    <%= f.number_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :ingredient_id %>
+    <% ingredients_list = []
+    @ingredients.each do |ingredient|
+      ingredients_list << [ingredient.name,ingredient.id]
+    end
+      %>
+    <%= f.select :ingredient_id, ingredients_list %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+

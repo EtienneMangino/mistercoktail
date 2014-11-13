@@ -10,6 +10,8 @@ class CoktailsController < ApplicationController
   # GET /coktails/1
   # GET /coktails/1.json
   def show
+    @dose = Dose.new
+    @ingredients = Ingredient.all
   end
 
   # GET /coktails/new
