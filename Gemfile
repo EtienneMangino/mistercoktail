@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-
+ruby '2.1.2'
+gem 'rails_12factor', group: :production
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
 # Use postgresql as the database for Active Record
@@ -37,4 +38,9 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'binding_of_caller', group: :development
+gem 'better_errors', group: :development
 
+gem 'bootstrap-sass', '~> 3.3.0'
+
+gem 'google-webfonts-rails', '~> 0.0.4'
