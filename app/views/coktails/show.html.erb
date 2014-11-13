@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @coktail.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @coktail.description %>
+</p>
+
+<%= link_to 'Edit', edit_coktail_path(@coktail) %> |
+<%= link_to 'Back', coktails_path %>
