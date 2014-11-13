@@ -1,27 +1,28 @@
-<h1>Listing coktails</h1>
+<h1 class="text-center titre">Nos Cocktails</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container coktails_presentation">
+  <div class="row">
+      <ul class="text-center list-unstyled">
+        <% @coktails.each do |coktail| %>
+            <li>
+              <div class="col-xs-12 col-sm-6 col-md-3">
+                  <h3><%= link_to coktail.name, coktail %></h3>
+                  <p><%= coktail.description %></p>
+                  <div >
+                    <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_coktail_path(coktail),class: "coktail_options" %> -
+                    <%= link_to '<i class="fa fa-trash"></i>'.html_safe, coktail, method: :delete, data: { confirm: 'Are you sure?' },class: "coktail_options" %>
+                  </div>
+                  <div class="photo_coktail">
+                    <%= link_to image_tag(coktail.image_url), coktail %> -
+                  </div>
+              </div>
+            </li>
+          <% end %>
+      </ul>
 
-  <tbody>
-    <% @coktails.each do |coktail| %>
-      <tr>
-        <td><%= coktail.name %></td>
-        <td><%= coktail.description %></td>
-        <td><%= link_to 'Show', coktail %></td>
-        <td><%= link_to 'Edit', edit_coktail_path(coktail) %></td>
-        <td><%= link_to 'Destroy', coktail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+  </div>
+</div>
 <br>
-
-<%= link_to 'New Coktail', new_coktail_path %>
+<div class="text-center">
+  <%= link_to 'New Coktail', new_coktail_path, class: "btn btn-success" %>
+</div>

@@ -1,31 +1,36 @@
-<p id="notice"><%= notice %></p>
+<h1 class="text-center titre"><%= @coktail.name %></h1>
+<div class="coktail-presentation text-center">
+  <p >
+    <%= @coktail.description %>
+  </p>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @coktail.name %>
-</p>
+<div class="container coktail-description text-center">
+  <div class="row">
+    <div class="col-sm-6 col-md-offset-3 col-md-3">
+      <img src=<%= @coktail.image_url %> alt="cocktail">
+    </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @coktail.description %>
-</p>
-
-<h2 class="titre2 text-center">Doses</h2>
-<% @coktail.doses.all.each do |dose| %>
-  <div class="text-center ">
-    <p>
-      <strong>Ingredient:</strong>
-      <%= dose.ingredient.name %>
-    </p>
-
-    <p>
-      <strong>Amount :</strong>
-        <%= dose.amount %>
-    </p>
+    <div class="col-sm-6 col-md-3">
+      <h2 class="titre2 ">Recette : </h2>
+      <% @coktail.doses.all.each do |dose| %>
+        <div >
+          <p>
+            <strong>Ingredient:</strong> <%= dose.ingredient.name %>, <%= dose.amount %> doses
+            <%= link_to '<i class="fa fa-trash"></i>'.html_safe, coktail_dose_path(@coktail, dose), method: :delete, data: { confirm: 'Are you sure?' } %>
+          </p>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
-
-<%= render 'doses/form', coktail: @coktail, dose: @dose %>
-
-<%= link_to 'Edit', edit_coktail_path(@coktail) %> |
-<%= link_to 'Back', coktails_path %>
+  <br>
+  <div class="row ">
+    <div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+      <%= render 'doses/form', coktail: @coktail, dose: @dose %>
+      <div >
+      <%= link_to '<i class="fa fa-pencil"></i> Edit this cocktail'.html_safe, edit_coktail_path(@coktail), class: "text-center bottom_actions" %> |
+      <%= link_to '<i class="fa fa-reply"></i> Back to summary'.html_safe, coktails_path, class: "text-center bottom_actions" %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,6 @@
-<h1>New coktail</h1>
-
+<h1 class="text-center titre">Create a new Cocktail !</h1>
 <%= render 'form' %>
 
-<%= link_to 'Back', coktails_path %>
+<div class="text-center">
+<%= link_to '<i class="fa fa-reply"></i> Back to summary'.html_safe, coktails_path, class: "text-center bottom_actions" %>
+</div>

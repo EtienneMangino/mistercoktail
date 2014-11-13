@@ -44,3 +44,5 @@ gem 'better_errors', group: :development
 gem 'bootstrap-sass', '~> 3.3.0'
 
 gem 'google-webfonts-rails', '~> 0.0.4'
+
+gem "font-awesome-rails"

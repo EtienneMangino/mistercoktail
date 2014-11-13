@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :ingredients
+  resources :ingredients, except: [:show]
 
   resources :coktails do
     resources :doses, only: [:create, :destroy]

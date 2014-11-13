@@ -1,3 +1,4 @@
+<div class="text-center super_form">
 <%= form_for(@ingredient) do |f| %>
   <% if @ingredient.errors.any? %>
     <div id="error_explanation">
@@ -15,7 +16,9 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+  <br>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+</div>

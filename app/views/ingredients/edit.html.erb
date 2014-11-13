@@ -1,6 +1,7 @@
-<h1>Editing ingredient</h1>
+<h1 class="text-center titre">Edit the ingredient !</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @ingredient %> |
-<%= link_to 'Back', ingredients_path %>
+<div class="text-center">
+<%= link_to '<i class="fa fa-reply"></i> Back to summary'.html_safe, ingredients_path, class: "text-center bottom_actions" %>
+</div>

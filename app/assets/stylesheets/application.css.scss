@@ -1,5 +1,77 @@
-$brand-primary: #000000;
+$brand-primary: #454545;
+$brand-success: #61C66E;
 @import url(http://fonts.googleapis.com/css?family=Pacifico|Indie+Flower);
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
+
+
+.photo_coktail img{
+  height: 20em;
+  background-color: black;
+}
+
+.titre {
+  font-size: 50px;
+  font-weight: bold;
+  font-family: 'Pacifico', cursive;
+}
+
+.coktails_presentation h3 {
+  font-size: 35px;
+  font-style: italic;
+  text-decoration: underline;
+  font-family: 'Indie Flower', cursive;
+}
+
+.coktails_presentation h3 :hover{
+  font-weight: bold;
+}
+
+.coktails_presentation p {
+  font-size: 20px;
+  font-family: 'Indie Flower', cursive;
+}
+
+.coktail_options {
+  font-size: 25px;
+}
+
+.coktail-presentation p {
+  font-size: 35px;
+  font-family: 'Indie Flower', cursive;
+}
+.coktail-description img{
+  height: 20em;
+  background-color: black;
+}
+.coktail-description h2{
+  font-size: 30px;
+  font-family: 'Pacifico', cursive;
+}
+.coktail-description p{
+  font-size: 20px;
+  font-family: 'Indie Flower', cursive;
+}
+
+.super_form {
+  border: 2px solid #C7C7C7;
+  background-color: #E8E8E8;
+  border-radius: 5px;
+  padding: 10px;
+/*  margin:5px 35%;*/
+
+  font-family: 'Indie Flower', cursive;
+  font-size: 18px;
+
+}
+
+.bottom_actions {
+  font-size: 20px;
+}
+
+.ingredients_list{
+  font-size: 25px;
+  font-family: 'Indie Flower', cursive;
+}

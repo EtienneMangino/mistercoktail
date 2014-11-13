@@ -48,6 +48,8 @@ GEM
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.2.2)
+    font-awesome-rails (4.2.0.0)
+      railties (>= 3.2, < 5.0)
     google-webfonts-rails (0.0.4)
       activesupport (> 3.2.0, < 5.0)
     hike (1.2.3)
@@ -129,6 +131,7 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass (~> 3.3.0)
   coffee-rails (~> 4.0.0)
+  font-awesome-rails
   google-webfonts-rails (~> 0.0.4)
   jbuilder (~> 2.0)
   jquery-rails

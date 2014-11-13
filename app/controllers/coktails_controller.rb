@@ -71,6 +71,6 @@ class CoktailsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def coktail_params
-      params.require(:coktail).permit(:name, :description)
+      params.require(:coktail).permit(:name, :description, :image_url)
     end
 end
