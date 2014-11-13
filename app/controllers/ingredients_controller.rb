@@ -28,8 +28,8 @@ class IngredientsController < ApplicationController
 
     respond_to do |format|
       if @ingredient.save
-        format.html { redirect_to @ingredient, notice: 'Ingredient was successfully created.' }
-        format.json { render :show, status: :created, location: @ingredient }
+        format.html { redirect_to ingredients_path, notice: 'Ingredient was successfully created.' }
+        format.json { render :index, status: :created, location: @ingredient }
       else
         format.html { render :new }
         format.json { render json: @ingredient.errors, status: :unprocessable_entity }
@@ -42,8 +42,8 @@ class IngredientsController < ApplicationController
   def update
     respond_to do |format|
       if @ingredient.update(ingredient_params)
-        format.html { redirect_to @ingredient, notice: 'Ingredient was successfully updated.' }
-        format.json { render :show, status: :ok, location: @ingredient }
+        format.html { redirect_to ingredients_path, notice: 'Ingredient was successfully updated.' }
+        format.json { render :index, status: :ok, location: @ingredient }
       else
         format.html { render :edit }
         format.json { render json: @ingredient.errors, status: :unprocessable_entity }
