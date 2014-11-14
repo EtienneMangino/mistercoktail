@@ -8,7 +8,12 @@
 <div class="container coktail-description text-center">
   <div class="row">
     <div class="col-sm-6 col-md-offset-3 col-md-3">
-      <img src=<%= @coktail.image_url %> alt="cocktail">
+      <%if @coktail.picture.exists? %>
+        <%= image_tag @coktail.picture.url(:medium) %>
+      <% else %>
+        <%= image_tag(@coktail.image_url)%>
+      <% end %>
+
     </div>
 
     <div class="col-sm-6 col-md-3">

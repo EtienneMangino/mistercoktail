@@ -21,7 +21,11 @@
       <%= f.text_field :description %>
     </div>
     <div class="field">
-      <%= f.label :image_url %><br>
+    <%= f.label :picture %><br>
+    <%= f.file_field :picture %>
+    </div>
+    <div class="field">
+      <%= f.label :image_url, 'Image url (backup)' %><br>
       <%= f.text_field :image_url %>
     </div>
     <br>

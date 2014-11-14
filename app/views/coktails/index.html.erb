@@ -13,7 +13,12 @@
                     <%= link_to '<i class="fa fa-trash"></i>'.html_safe, coktail, method: :delete, data: { confirm: 'Are you sure?' },class: "coktail_options" %>
                   </div>
                   <div class="photo_coktail">
-                    <%= link_to image_tag(coktail.image_url), coktail %> -
+                    <% if coktail.picture.exists? %>
+                      <%= link_to image_tag(coktail.picture.url(:medium)), coktail %>
+
+                    <% else %>
+                      <%= link_to image_tag(coktail.image_url), coktail %>
+                    <% end %>
                   </div>
               </div>
 
